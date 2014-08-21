@@ -1,6 +1,6 @@
 {
   "name": "colorpalette",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Randomly select colors from a range of presets.",
   "keywords": "utilities",
   "main": "./src/colorpalette.js",
