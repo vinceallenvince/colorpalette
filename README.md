@@ -57,7 +57,7 @@ To retrieve a color array from the palette, use getColor().
 var color = pal.getColor(); // returns an array; ex: [255, 100, 0]
 ```
 
-In the browser, the module exposes a ColorPalette namespace.
+In the browser, the module exposes a ColorPalette class.
 
 ```
 <html>
