@@ -54,7 +54,7 @@ pal.addColor({
 To retrieve a color array from the palette, use getColor().
 
 ```
-var color = pal.getColor(); // returns an array
+var color = pal.getColor(); // returns an array; ex: [255, 100, 0]
 ```
 
 In the browser, the module exposes a ColorPalette namespace.
@@ -76,10 +76,13 @@ In the browser, the module exposes a ColorPalette namespace.
         max: 20,
         style: 'dotted'
       });
-      var box = document.createElement('div');
-      box.style.cssText = 'width: 100px; height: 100px; borderWidth: 4px; borderColor: red;';
-      box.style.borderStyle = pal.getBorder();
-      document.body.appendChild(box);
+      for (var i = 0; i < 150; i++) {
+        var color = pal.getColor();
+        var obj = document.createElement('div');
+        obj.style.cssText = 'width: 100px; height: 100px; display: inline-block';
+        obj.style.backgroundColor = 'rgb(' + color[0] + ', ' + color[1] + ', ' + color[2] + ')';
+        document.body.appendChild(obj);
+      }
     </script>
   </body>
 </html>
