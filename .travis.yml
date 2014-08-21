@@ -5,3 +5,24 @@ before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - npm install -g grunt-cli
+deploy:
+- provider: releases
+  api_key:
+    secure: Tk3n3xOQlyTfgXULhOFx99nniam3Wjx/6lxA7AT1KmdfsmPtrjfYrWVeQVlemAXHOrYzQfhp1HXVW7l4YgqV66K+7ABgGocuHkLCW6HiWumZQLzr1+32YVshNfjHh5cnJ/99zbgVrmCCw6rpk0HFJXfOl4eTxYta8Kg9a4U7bwo=
+  file: release/colorpalette.min.js
+  on:
+    tags: true
+    repo: vinceallenvince/borderpalette
+    all_branches: true
+- provider: npm
+  email: vince@vinceallen.com
+  api_key:
+    secure: SHa0mphR7ttRknETFuUNE6CS90EmtvOvg6F21BwZQzD6HAMKYx4GFStSJ0GsGg64ZOMqsO4UwbMNF1/SS/8bw+1xy1oxYAGNAfVkeJik/sXx+fdxZhcmx/UHQSb+cC5GEMkTiQ9Anvb+yWnIQMiXwyUOhN47i+h4ftzkTSAMj6k=
+  on:
+    tags: true
+    repo: vinceallenvince/borderpalette
+    all_branches: true
+env:
+  global:
+  - GH_REF: github.com/vinceallenvince/borderpalette.git
+  - secure: Cn+bWGoVhRGfuwKTTS0PwjmmHgnuLA5Y3iqJNF3m6Bl5Cu+W40hmgiLmbkjuOsJvOtnI5UGcBcpRJoh1fvOEYI1fWke2o8AfeGkDtcLe19BWtq+x1S2qdAPwiyZ7MQDS1caNCxWgh586pHYOqgS8jS+NwNIMCsD27LV0LIwOsQc=
