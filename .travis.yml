@@ -12,7 +12,7 @@ deploy:
   file: release/colorpalette.min.js
   on:
     tags: true
-    repo: vinceallenvince/borderpalette
+    repo: vinceallenvince/colorpalette
     all_branches: true
 - provider: npm
   email: vince@vinceallen.com
@@ -20,9 +20,9 @@ deploy:
     secure: SHa0mphR7ttRknETFuUNE6CS90EmtvOvg6F21BwZQzD6HAMKYx4GFStSJ0GsGg64ZOMqsO4UwbMNF1/SS/8bw+1xy1oxYAGNAfVkeJik/sXx+fdxZhcmx/UHQSb+cC5GEMkTiQ9Anvb+yWnIQMiXwyUOhN47i+h4ftzkTSAMj6k=
   on:
     tags: true
-    repo: vinceallenvince/borderpalette
+    repo: vinceallenvince/colorpalette
     all_branches: true
 env:
   global:
-  - GH_REF: github.com/vinceallenvince/borderpalette.git
+  - GH_REF: github.com/vinceallenvince/colorpalette.git
   - secure: Cn+bWGoVhRGfuwKTTS0PwjmmHgnuLA5Y3iqJNF3m6Bl5Cu+W40hmgiLmbkjuOsJvOtnI5UGcBcpRJoh1fvOEYI1fWke2o8AfeGkDtcLe19BWtq+x1S2qdAPwiyZ7MQDS1caNCxWgh586pHYOqgS8jS+NwNIMCsD27LV0LIwOsQc=
