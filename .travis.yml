@@ -10,6 +10,10 @@ before_deploy: echo 'ready?'
 after_deploy:
 - echo 'done!'
 - ./deploy-gh-pages.sh
+env:
+  global:
+  - GH_REF: github.com/vinceallenvince/colorpalette.git
+  - secure: UOGYFwheiIclrJIxhvjpHkt1vCkhdU6pSxu6T5Gyt2qB0kgo6yAsgNJjLViNIkQLCeMtybinXvsfo5rKb0L9lSoVRo8PO0kunzpmQx3eLJoMo5fWGrvx5OoTQT5WXlu5hgj5+TVs5cvB/iUq4gPh5WUg6e6Zfahr+sHA5XSfy4g=
 deploy:
 - provider: releases
   api_key:
@@ -27,7 +31,3 @@ deploy:
     tags: true
     repo: vinceallenvince/colorpalette
     all_branches: true
-env:
-  global:
-  - GH_REF: github.com/vinceallenvince/colorpalette.git
-  - secure: Cn+bWGoVhRGfuwKTTS0PwjmmHgnuLA5Y3iqJNF3m6Bl5Cu+W40hmgiLmbkjuOsJvOtnI5UGcBcpRJoh1fvOEYI1fWke2o8AfeGkDtcLe19BWtq+x1S2qdAPwiyZ7MQDS1caNCxWgh586pHYOqgS8jS+NwNIMCsD27LV0LIwOsQc=
