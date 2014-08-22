@@ -4,7 +4,7 @@
 
 Randomly select color styles from a range of presets.
 
-I created this module after taking a [Marius Watz](http://mariuswatz.com) Processing workshop. He described a method to create a set of color palettes by creating a pool of colors and randomly selecting from it. I've used this ColorPalette class in several projects including [FloraJS](https://github.com/vinceallenvince/FloraJS).
+I created this module after taking a [Marius Watz](http://mariuswatz.com) Processing workshop. He described a method to create a set of color palettes by creating a pool of colors and randomly selecting from it. This module is my interpretation. I've used it in several projects including [FloraJS](https://github.com/vinceallenvince/FloraJS).
 
 ##Install
 
