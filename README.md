@@ -67,14 +67,16 @@ In the browser, the module exposes a ColorPalette class.
   <body>
     <script>
       var pal = new ColorPalette();
-      pal.addBorder({
+      pal.addColor({
         min: 2,
-        max: 10,
-        style: 'solid'
-      }).addBorder({
+        max: 8,
+        startColor: [105, 210, 231],
+        endColor: [85, 190, 211]
+      }).addColor({
         min: 2,
-        max: 20,
-        style: 'dotted'
+        max: 8,
+        startColor: [167, 219, 216],
+        endColor: [147, 199, 196]
       });
       for (var i = 0; i < 150; i++) {
         var color = pal.getColor();
@@ -88,7 +90,7 @@ In the browser, the module exposes a ColorPalette class.
 </html>
 ```
 
-To learn how to use the various colorpalette functions, please review [the docs](http://vinceallenvince.github.io/colorpalette/doc/).
+To learn how to use the various colorpalette functions, please review [the docs](http://vinceallenvince.github.io/colorpalette/doc/) or check out the [examples](http://vinceallenvince.github.io/colorpalette/).
 
 ##Building this project
 
