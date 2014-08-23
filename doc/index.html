@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Index</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Index</h1>
+    
+    
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><p><img src="https://travis-ci.org/vinceallenvince/colorpalette.svg?branch=master" alt="Build status"></p>
+<h1>colorpalette</h1>
+<p>Randomly select color styles from a range of presets.</p>
+<p>I created this module after taking a <a href="http://mariuswatz.com">Marius Watz</a> Processing workshop. He described a method to create a set of color palettes by creating a pool of colors and randomly selecting from it. This module is my interpretation. I've used it in several projects including <a href="https://github.com/vinceallenvince/FloraJS">FloraJS</a>.</p>
+<h2>Install</h2>
+<p>To include colorpalette as a component in your project, use the node module.</p>
+<pre><code>npm install colorpalette --save</code></pre>
+<p>You can also use the <a href="https://github.com/vinceallenvince/colorpalette/releases/latest">standalone version</a> and reference the js file from your document.</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;scripts/colorpalette.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  ...</code></pre>
+<h2>Usage</h2>
+<p>The module exports a colorpalette class. In a nodejs project, you access it via:</p>
+<pre><code>var ColorPalette = require('colorpalette');
+var palette = new ColorPalette();</code></pre>
+<p>Add colors to your palette via addColor(). Pass the min/max amounts plus the start and end colors. The function adds a random number of colors between your min and max. It also selects a random color space between your start/end colors.</p>
+<p>In the example below, you are twice as likely to get a dark red color from the palette. Notice you can also chain your addColor() calls.</p>
+<pre><code>pal.addColor({
+  min: 2,
+  max: 8,
+  startColor: [255, 0, 0],
+  endColor: [200, 0, 0]
+}).addColor({
+  min: 4,
+  max: 16,
+  startColor: [30, 0, 0],
+  endColor: [60, 0, 0]
+});</code></pre>
+<p>To retrieve a color array from the palette, use getColor().</p>
+<pre><code>var color = pal.getColor(); // returns an array; ex: [255, 100, 0]</code></pre>
+<p>In the browser, the module exposes a ColorPalette class.</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;scripts/colorpalette.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script&gt;
+      var pal = new ColorPalette();
+      pal.addColor({
+        min: 2,
+        max: 8,
+        startColor: [105, 210, 231],
+        endColor: [85, 190, 211]
+      }).addColor({
+        min: 2,
+        max: 8,
+        startColor: [167, 219, 216],
+        endColor: [147, 199, 196]
+      });
+      for (var i = 0; i &lt; 150; i++) {
+        var color = pal.getColor();
+        var obj = document.createElement('div');
+        obj.style.cssText = 'width: 100px; height: 100px; display: inline-block';
+        obj.style.backgroundColor = 'rgb(' + color[0] + ', ' + color[1] + ', ' + color[2] + ')';
+        document.body.appendChild(obj);
+      }
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>To learn how to use the various colorpalette functions, please review <a href="http://vinceallenvince.github.io/colorpalette/doc/">the docs</a> or check out the <a href="http://vinceallenvince.github.io/colorpalette/">examples</a>.</p>
+<h2>Building this project</h2>
+<p>This project uses <a href="http://gruntjs.com">Grunt</a>. To build the project first install the node modules.</p>
+<pre><code>npm install</code></pre>
+<p>Next, run grunt.</p>
+<pre><code>grunt</code></pre>
+<p>To run the tests, run 'npm test'.</p>
+<pre><code>npm test</code></pre>
+<p>To check test coverage run 'grunt coverage'.</p>
+<pre><code>grunt coverage</code></pre>
+<p>A pre-commit hook is defined in /pre-commit that runs jshint. To use the hook, run the following:</p>
+<pre><code>ln -s ../../pre-commit .git/hooks/pre-commit</code></pre>
+<p>A post-commit hook is defined in /post-commit that runs the Plato complexity analysis tools. To use the hook, run the following:</p>
+<pre><code>ln -s ../../post-commit .git/hooks/post-commit</code></pre>
+<p>View the <a href="http://vinceallenvince.github.io/colorpalette/reports/">code complexity</a> report.</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="ColorPalette.html">ColorPalette</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Sat Aug 23 2014 20:15:44 GMT-0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
